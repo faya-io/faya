@@ -1,3 +1,4 @@
+var path = require('path');
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -110,6 +111,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.scss$/,
           /\.json$/,
           /\.woff$/,
           /\.woff2$/,
@@ -133,6 +135,10 @@ module.exports = {
           // directory for faster rebuilds.
           cacheDirectory: true
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass-loader',
       },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -190,6 +196,10 @@ module.exports = {
         loader: 'truffle-solidity?network_id=123'
       }*/
     ]
+  },
+
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, '../src')],
   },
 
   // We use PostCSS for autoprefixing only.

@@ -10,7 +10,7 @@ import LogoutButtonContainer from './user/ui/logoutbutton/LogoutButtonContainer'
 import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
-import './App.css'
+import './App.scss'
 
 class App extends Component {
   render() {

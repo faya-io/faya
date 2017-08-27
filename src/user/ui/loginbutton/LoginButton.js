@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const LoginButton = ({ onLoginUserClick }) => {
   return(
-    <Link to="/signup" className="pure-menu-link">Get Verified</Link>
+    <Link to="/signup" className="">Get Verified</Link>
   )
 }
 

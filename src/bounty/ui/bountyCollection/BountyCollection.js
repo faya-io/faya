@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
+import ThirdTierBounty from '../bountyItem/ThirdTierBounty'
+import FirstBounty from '../bountyItem/FirstBounty'
 
 class BountyCollection extends Component {
   constructor(props) {
     super(props)
 
-    
-    
+    this.bountyData = {}
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchBounty()
   }
 
@@ -17,21 +18,14 @@ class BountyCollection extends Component {
       firstBounty,
       secondBounty,
       thirdBounty,
-    ] = this.props.bounties
+    ] = props.activeBounty
 
-    this.state = {
-      firstBounty,
-      secondBounty,
-      thirdBounty,
-      thirdTierBounties: this.props.bounties.slice(3, 11),
-    }
-
-    
+    const thirdTierBounties = this.props.activeBounty.slice(3, 11)
 
     return(
       <div className="bountyCollectionContainer">
-        <div className="firstBounty">
-        </div>
+
+        {firstBounty ? <FirstBounty data={firstBounty} /> : null}
 
         <div className="secondaryBountyCollection">
           <div className="secondBounty"></div>
@@ -39,9 +33,13 @@ class BountyCollection extends Component {
         </div>
 
         <div className="thirdTierBountyCollection">
+          {
+            thirdTierBounties.map(data =>
+              <ThirdTierBounty bounty={data} />
+            )
+          }
 
         </div>
-        div
       </div>
     )
   }

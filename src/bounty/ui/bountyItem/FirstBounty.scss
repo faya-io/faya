@@ -1,0 +1,52 @@
+.firstBountyLink {
+  text-decoration: none;
+}
+
+.firstBounty {
+  height: 560px;
+
+  .firstBountyData {
+    width: 300px;
+    right: 250px;
+    position: absolute;
+    top: 150px;
+  }
+
+  .title {
+    color: white;
+    font-size: 40px;
+    width: 270px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .meta {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+    span {
+      line-height: 30px;
+      height: 30px;
+      display: inline-flex;
+      margin-right: 40px;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .claimBtn {
+    height: 40px;
+    width: 195px;
+    border-radius: 4px;
+    background-color: #00AAFF;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.35);
+    color: white;
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+  }
+}

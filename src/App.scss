@@ -1,5 +1,9 @@
 /* PAGE */
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 .pure-g [class*=pure-u] {
   font-family: 'Open Sans', sans-serif;
@@ -42,30 +46,53 @@ code {
   // background: black;
   font-family: 'Open Sans', sans-serif;
   display: flex;
+  width: 100%;
+  z-index: 1;
 
   .logo {
     flex: 1;
+    a {
+      padding-left: 90px;
+      font-size: 28px;
+      text-decoration: none;
+      color: #ddd;
+    }
   }
 
   ul {
     flex: 1;
     display: flex;
 
-    .pure-menu-item {
+    li {
       flex: 1;
+      padding: 15px 5px;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        font-size: 14px;
+      }
     }
   }
 
-  .navbar-right {
+  .profile-button {
     flex: 1;
 
     a, p {
       float: right;
-      padding: .5em 1em;
+      padding: 15px 60px;
       margin: 0;
+      color: #ddd;
+      text-decoration: none;
     }
+
+  }
+
+  a:hover {
+    color: white;
   }
 }
+
 
 .navbar .pure-menu-heading {
   font-weight: bold;
@@ -76,7 +103,20 @@ code {
   float: right;
 }
 
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px;
+.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+  &.black {
+    fill: black;
+  }
+}
+
+.bounty-icon {
+  background: url(./images/Bounty.svg) no-repeat center center;
+}
+
+.claim-icon {
+  background: url(./images/Claim.svg) no-repeat center center;
 }

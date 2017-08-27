@@ -32,9 +32,14 @@ class App extends Component {
       <LoginButtonContainer />
     )
 
+    let path = this.props.location.pathname.replace(/\//g, '')
+    if (!path) {
+      path = 'home'
+    }
+
     return (
       <div className="App">
-        <nav className="navbar">
+        <nav className={`navbar ${path}`}>
           <div className="logo">
             <Link to="/" className=" ">Faya.</Link>
           </div>

@@ -1,0 +1,38 @@
+.profile-button {
+  flex: 1;
+}
+
+.userProfile {
+  margin: 0;
+  padding: 15px 60px 0;
+  text-align: right;
+
+  .link {
+    text-decoration: none;
+  }
+
+  .text {
+    margin: 0;
+  }
+
+  a, p {
+    text-decoration: none;
+    color: #171818;
+    &:hover {
+      color: #000;
+    }
+  }
+
+}
+
+.home, .signup {
+  .userProfile {
+    a, p {
+      color: #ddd;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+}

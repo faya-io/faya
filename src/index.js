@@ -11,7 +11,9 @@ import { loginUser } from './user/ui/loginbutton/LoginButtonActions'
 import App from './App'
 import Home from './layouts/home/Home'
 import SignUp from './user/layouts/signup/SignUp'
-import Profile from './user/layouts/profile/Profile'
+import PublishBounty from './bounty/layouts/publishBounty/PublishBounty'
+import ViewBounty from './bounty/layouts/viewBounty/ViewBounty'
+import Claim from './bounty/layouts/Claim'
 
 // Redux Store
 import store from './store'
@@ -35,7 +37,9 @@ ReactDOM.render((
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
           <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
-          <Route path="profile" component={UserIsAuthenticated(Profile)} />
+          <Route path="publish" component={UserIsAuthenticated(PublishBounty)} />
+          <Route path="bounty/:id" component={UserIsAuthenticated(ViewBounty)} />
+          <Route path="claim/:id" component={UserIsAuthenticated(Claim)} />
         </Route>
       </Router>
     </Provider>

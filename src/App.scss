@@ -39,18 +39,32 @@ code {
 .navbar {
   position: fixed;
   padding: 5px;
-  background: #0c1a2b;
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-}
+  // background: black;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
 
-.navbar a {
-  color: #fff;
-}
+  .logo {
+    flex: 1;
+  }
 
-.navbar a:active,
-.navbar a:focus,
-.navbar a:hover {
-  background: #233e5e;
+  ul {
+    flex: 1;
+    display: flex;
+
+    .pure-menu-item {
+      flex: 1;
+    }
+  }
+
+  .navbar-right {
+    flex: 1;
+
+    a, p {
+      float: right;
+      padding: .5em 1em;
+      margin: 0;
+    }
+  }
 }
 
 .navbar .pure-menu-heading {

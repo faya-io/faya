@@ -52,14 +52,12 @@ export function loginUser() {
             {
               return browserHistory.push(decodeURIComponent(currentLocation.query.redirect))
             }
-
-            return browserHistory.push('/dashboard')
           })
           .catch(function(result) {
             // If error, go to signup page.
-            console.error('Wallet ' + coinbase + ' does not have an account!')
+            console.log('Wallet ' + coinbase + ' does not have an account!')
 
-            return browserHistory.push('/signup')
+            // return browserHistory.push('/signup')
           })
         })
       })

@@ -1,10 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const LoginButton = ({ onLoginUserClick }) => {
   return(
-    <li className="pure-menu-item">
-      <a href="#" className="pure-menu-link" onClick={(event) => onLoginUserClick(event)}>Login</a>
-    </li>
+    <Link to="/signup" className="pure-menu-link">Get Verified</Link>
   )
 }
 

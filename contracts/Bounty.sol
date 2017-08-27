@@ -37,8 +37,8 @@ contract Bounty {
         uint claimIndex
     );
 
-    function Bounty(address initiator, uint _due, bytes32 _ipfsHash) {
-        initiator = msg.sender;
+    function Bounty(address _initiator, uint _due, bytes32 _ipfsHash) {
+        initiator = _initiator;
 
         due = _due;
         ipfsHash = _ipfsHash;

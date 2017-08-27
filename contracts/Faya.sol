@@ -7,12 +7,15 @@ contract Faya {
   address[] activeBounty;
   address[] pastBounty;
 
+  event Log(bytes32 _msg);
+
   function startBounty(uint due, bytes32 ipfs) {
-    var bounty = new Bounty(msg.sender, due, ipfs);
+    address bounty = new Bounty(msg.sender, due, ipfs);
     activeBounty.push(bounty);
   }
 
   function getActiveBounty() returns (address[]) {
+    Log(bytes32(activeBounty.length));
     return activeBounty;
   }
 

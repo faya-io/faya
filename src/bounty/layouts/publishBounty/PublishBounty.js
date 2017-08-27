@@ -94,7 +94,7 @@ class PublishBounty extends Component {
                       Name
                     </div>
                     <div className="pure-u-2-3">
-                      <Text field='title' />
+                      <Text field='title' placeholder="Your bounty name" />
                     </div>
                   </div>
                   <div className="formItem">
@@ -102,7 +102,7 @@ class PublishBounty extends Component {
                       Description
                     </div>
                     <div className="pure-u-2-3">
-                      <Textarea field='description' />
+                      <Textarea field='description' placeholder="Say something about your bounty" />
                     </div>
                   </div>
                   <div className="formItem">
@@ -110,7 +110,7 @@ class PublishBounty extends Component {
                       Link
                     </div>
                     <div className="pure-u-2-3">
-                      <Text field='link' />
+                      <Text field='link' placeholder="https://your-bounty-link" />
                     </div>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ class PublishBounty extends Component {
                       Total Amount
                     </div>
                     <div className="pure-u-2-3">
-                      <Text field='reward' />
+                      <Text field='reward' type="number" placeholder="Reward"  />
                     </div>
                   </div>
                   <div className="formItem">

@@ -49,4 +49,43 @@
   .content {
     clear: both;
   }
+
+  .form {
+    .content > div {
+      padding-right: 40px;
+    }
+    h2 {
+      border-bottom: 1px solid #D8DBDD;
+    }
+
+    .formItem {
+      padding: 10px 0;
+      border-bottom: 1px dashed #DBDBDD;
+    }
+
+    input,textarea {
+      width: 100%;
+      border: 1px solid #E3E6E8;
+      border-radius: 4px;
+      padding: 4px 10px;
+      outline: none;
+    }
+
+    input {
+      height: 40px;
+    }
+  }
+
+  .submitBtnContainer {
+    margin-top: 20px;
+    margin-right: 40px;
+    float: right;
+    button {
+      height: 40px;
+      width: 176px;
+      background-color: #00C165;
+      border: 1px solid #00C165;
+      color: white;
+    }
+  }
 }

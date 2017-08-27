@@ -16,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener('scroll', () => {
       if (document.body.scrollTop > 100) {
-        document.getElementsByClassName('navbar')[0].style.background = 'rgba(0,0,0,0.3)'
+        document.getElementsByClassName('navbar')[0].style.background = 'rgba(0,0,0,0.8)'
       } else {
         document.getElementsByClassName('navbar')[0].style.background = ''
       }
@@ -60,17 +60,7 @@ class App extends Component {
 
         {this.props.children}
 
-        <footer className="">
-          <div className="logoFooter">
-            <Link to="/" className="">Faya.</Link>
-          </div>
-          <div className="copyright">
-            <span>Copyright @2017 faya Inc. All right reserved.</span>
-          </div>
-          <div className="footerRight">
-            Privacy Policy | Term of Use | Legal | Site Map
-          </div>
-        </footer>
+        <img className="fakeImg" src="https://ipfs.io/ipfs/QmcQ65yuNQWzu5D9fUdqu4d8xAfjQoCNqKHQByYY4FdWLd" alt="" />
       </div>
     );
   }

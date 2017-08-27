@@ -107,10 +107,6 @@ code {
   display: inline-block;
   width: 30px;
   height: 30px;
-
-  &.black {
-    fill: black;
-  }
 }
 
 .bounty-icon {
@@ -119,4 +115,20 @@ code {
 
 .claim-icon {
   background: url(./images/Claim.svg) no-repeat center center;
+}
+
+.bounty-icon-black {
+  background: url(./images/BountyBlack.svg) no-repeat center center;
+}
+
+.claim-icon-black {
+  background: url(./images/ClaimBlack.svg) no-repeat center center;
+}
+
+footer {
+  clear: both;
+}
+
+.fakeImg {
+  width: 100%;
 }

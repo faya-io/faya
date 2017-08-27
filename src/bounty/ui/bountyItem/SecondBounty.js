@@ -15,11 +15,11 @@ const SecondBounty = ({ data }) => {
           <div className="title" >{data.content.title}</div>
           <div className="meta">
             <span>
-              <i className="bounty-icon icon black"></i>
+              <i className="bounty-icon-black icon"></i>
               $ {data.reward}
             </span>
             <span>
-              <i className="claim-icon icon black"></i>
+              <i className="claim-icon-black icon"></i>
               {data.claims.length}
             </span>
           </div>

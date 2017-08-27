@@ -1,45 +1,50 @@
 import React, { Component } from 'react'
 import ThirdTierBounty from '../bountyItem/ThirdTierBounty'
 import FirstBounty from '../bountyItem/FirstBounty'
+import SecondBounty from '../bountyItem/SecondBounty'
+import './BountyCollection.scss'
 
 class BountyCollection extends Component {
-  constructor(props) {
-    super(props)
-
-    this.bountyData = {}
-  }
-
   componentWillMount() {
     this.props.fetchBounty()
   }
 
   render() {
     const [
-      firstBounty,
-      secondBounty,
-      thirdBounty,
-    ] = props.activeBounty
+      firstBountyData,
+      secondBountyData,
+      thirdBountyData,
+    ] = this.props.bounties
 
-    const thirdTierBounties = this.props.activeBounty.slice(3, 11)
+    const thirdTierBounties = this.props.bounties.slice(3, 11)
 
     return(
       <div className="bountyCollectionContainer">
 
-        {firstBounty ? <FirstBounty data={firstBounty} /> : null}
+        {firstBountyData && <FirstBounty data={firstBountyData} />}
 
-        <div className="secondaryBountyCollection">
-          <div className="secondBounty"></div>
-          <div className="thirdBounty"></div>
-        </div>
+        {secondBountyData && (
+          <div className="secondaryBountyCollection">
+            <div className="secondaryItem">
+              <SecondBounty data={secondBountyData} />
+            </div>
+            <div className="secondaryItem">
+              <SecondBounty data={thirdBountyData} />
+            </div>
+          </div>
+        )}
 
-        <div className="thirdTierBountyCollection">
+
+        <div className="thirdTierBountyCollection pure-g">
           {
-            thirdTierBounties.map(data =>
-              <ThirdTierBounty bounty={data} />
+            thirdTierBounties.map((data, index) =>
+              <ThirdTierBounty key={index} data={data} />
             )
           }
 
         </div>
+
+        <img className="fakeImg" src="https://ipfs.io/ipfs/QmX8UU6KiCyCmHPzs8hP5C9rKSyw4R4QqWanZ6SRaxmz2h" alt="" />
       </div>
     )
   }

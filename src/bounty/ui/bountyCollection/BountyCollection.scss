@@ -1,0 +1,28 @@
+.bountyCollectionContainer {
+  .secondaryBountyCollection {
+    padding: 40px 80px 0;
+    display: flex;
+    justify-content: space-around;
+
+    .secondaryItem {
+      padding: 0 10px;
+      .secondBounty {
+        height: 300px;
+      }
+
+      &:first-child {
+        flex: 3;
+      }
+
+      &:last-child {
+        flex: 2;
+      }
+    }
+  }
+
+}
+
+.fakeInsignts {
+  background: url('https://ipfs.io/ipfs/QmXHa8TqXAwD8YXa5Z9iz57J1Rzwg9NG9ggiCCqeWYpUud') no-repeat center center;
+  background-size: cover;
+}

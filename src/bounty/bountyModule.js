@@ -15,7 +15,6 @@ function bountyFetched(bounties) {
 }
 
 export function fetchBounty() {
-  console.log('dddddd', store.getState().web3)
   let web3 = store.getState().web3.web3Instance
 
   // Double-check web3's status.
@@ -39,6 +38,7 @@ export function fetchBounty() {
 
         faya.deployed().then(function(instance) {
           instance.getBounties.call().then((bounties) => {
+            console.log(instance)
             bounties.map((bountyAddr) => {
               const b = bounty.at(bountyAddr)
               b.getBountyDetail.call().then(([ipfs, isActive, due, reward, claimCount]) => {

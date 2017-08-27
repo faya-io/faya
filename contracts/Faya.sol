@@ -13,7 +13,7 @@ contract Faya {
     bounties.push(bounty);
   }
 
-  function getBounties() returns (address[]) {
+  function getBounties() constant returns (address[]) {
     // Log(bytes32(activeBounty.length));
     return bounties;
   }

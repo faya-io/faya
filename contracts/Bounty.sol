@@ -27,12 +27,12 @@ contract Bounty {
         bytes32 _ipfsHash
     );
 
-    event UpVote(
+    event UpVoteEvent(
         address indexed _voter,
         uint claimIndex
     );
 
-    event DownVote(
+    event DownVoteEvent(
         address indexed _voter,
         uint claimIndex
     );
@@ -57,8 +57,10 @@ contract Bounty {
     function vote(uint claimIndex, bool isUpVote) {
         if (isUpVote) { 
             claims[claimIndex].upVotes += 1;
+            UpVoteEvent(msg.sender, claimIndex);
         } else {
             claims[claimIndex].downVotes += 1;
+            DownVoteEvent(msg.sender, claimIndex);
         }
     }
 

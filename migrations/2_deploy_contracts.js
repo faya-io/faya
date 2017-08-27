@@ -11,5 +11,4 @@ module.exports = function(deployer) {
   deployer.link(Killable, Authentication);
   deployer.deploy(Authentication);
   deployer.deploy(Faya);
-  deployer.deploy(Bounty);
 };

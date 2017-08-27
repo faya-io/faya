@@ -9,7 +9,7 @@ contract Faya {
 
   event Log(bytes32 _msg);
 
-  function startBounty(uint due, bytes32 ipfs) {
+  function submitBounty(uint due, bytes32 ipfs) {
     address bounty = new Bounty(msg.sender, due, ipfs);
     activeBounty.push(bounty);
   }
@@ -26,6 +26,5 @@ contract Faya {
     }
     return result;
   }
-
   
 }

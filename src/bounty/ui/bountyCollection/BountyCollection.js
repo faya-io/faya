@@ -1,47 +1,50 @@
 import React, { Component } from 'react'
+import ThirdTierBounty from '../bountyItem/ThirdTierBounty'
+import FirstBounty from '../bountyItem/FirstBounty'
+import SecondBounty from '../bountyItem/SecondBounty'
+import './BountyCollection.scss'
 
 class BountyCollection extends Component {
-  constructor(props) {
-    super(props)
-
-    
-    
-  }
-
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchBounty()
   }
 
   render() {
     const [
-      firstBounty,
-      secondBounty,
-      thirdBounty,
+      firstBountyData,
+      secondBountyData,
+      thirdBountyData,
     ] = this.props.bounties
 
-    this.state = {
-      firstBounty,
-      secondBounty,
-      thirdBounty,
-      thirdTierBounties: this.props.bounties.slice(3, 11),
-    }
-
-    
+    const thirdTierBounties = this.props.bounties.slice(3, 11)
 
     return(
       <div className="bountyCollectionContainer">
-        <div className="firstBounty">
+
+        {firstBountyData && <FirstBounty data={firstBountyData} />}
+
+        {secondBountyData && (
+          <div className="secondaryBountyCollection">
+            <div className="secondaryItem">
+              <SecondBounty data={secondBountyData} />
+            </div>
+            <div className="secondaryItem">
+              <SecondBounty data={thirdBountyData} />
+            </div>
+          </div>
+        )}
+
+
+        <div className="thirdTierBountyCollection pure-g">
+          {
+            thirdTierBounties.map((data, index) =>
+              <ThirdTierBounty key={index} data={data} />
+            )
+          }
+
         </div>
 
-        <div className="secondaryBountyCollection">
-          <div className="secondBounty"></div>
-          <div className="thirdBounty"></div>
-        </div>
-
-        <div className="thirdTierBountyCollection">
-
-        </div>
-        div
+        <img className="fakeImg" src="https://ipfs.io/ipfs/QmX8UU6KiCyCmHPzs8hP5C9rKSyw4R4QqWanZ6SRaxmz2h" alt="" />
       </div>
     )
   }

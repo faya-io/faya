@@ -1,0 +1,62 @@
+.thirdTierBountyCollection {
+  padding: 10px 0;
+  margin: 0 80px;
+
+}
+
+.thirdBountyLink {
+  text-decoration: none;
+  display: block;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.thirdBountyContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+
+  .thirdBounty {
+    border: 1px solid #D8DBDD;
+    height: 100%;
+    position: relative;
+
+    .thirdBountyData {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 40%;
+      padding: 25px 20px;
+      background: rgba(0,0,0,0.7);
+
+      .title {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding: 0 10px 0 0;
+      }
+
+      .meta {
+        color: white;
+        font-size: 14px;
+        span {
+          line-height: 30px;
+          height: 30px;
+          display: flex;
+          i {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+

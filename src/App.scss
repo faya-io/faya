@@ -1,5 +1,9 @@
 /* PAGE */
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 .pure-g [class*=pure-u] {
   font-family: 'Open Sans', sans-serif;
@@ -20,6 +24,12 @@ code {
   box-sizing: border-box;
   width: 100%;
   padding: 45px 20px;
+
+  min-height: calc(100vh - 60px);
+
+  &.black {
+    background: #171818;
+  }
 }
 
 .pure-button-primary {
@@ -42,41 +52,112 @@ code {
   // background: black;
   font-family: 'Open Sans', sans-serif;
   display: flex;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
 
   .logo {
     flex: 1;
+    a {
+      padding-left: 90px;
+      font-size: 28px;
+      text-decoration: none;
+    }
   }
 
   ul {
     flex: 1;
     display: flex;
 
-    .pure-menu-item {
+    li {
       flex: 1;
+      padding: 15px 5px;
+      text-align: center;
+      a {
+        text-decoration: none;
+        font-size: 14px;
+      }
     }
   }
 
-  .navbar-right {
-    flex: 1;
-
-    a, p {
-      float: right;
-      padding: .5em 1em;
-      margin: 0;
+  a {
+    color: #171818;
+    &:hover {
+      color: #000;
     }
+  }
+
+  &.home, &.signup {
+    a {
+      color: #ddd;
+      &:hover {
+        color: white;
+      }
+    }
+
   }
 }
+
 
 .navbar .pure-menu-heading {
   font-weight: bold;
   text-transform: none;
 }
 
-.navbar .navbar-right {
-  float: right;
+.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
 
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px;
+.bounty-icon {
+  background: url(./images/Bounty.svg) no-repeat center center;
+}
+
+.claim-icon {
+  background: url(./images/Claim.svg) no-repeat center center;
+}
+
+.bounty-icon-black {
+  background: url(./images/BountyBlack.svg) no-repeat center center;
+}
+
+.claim-icon-black {
+  background: url(./images/ClaimBlack.svg) no-repeat center center;
+}
+
+footer {
+  clear: both;
+}
+
+.fakeImg {
+  width: 100%;
+}
+
+.signupContainer {
+  color: white;
+  height: calc(100vh - 60px);
+
+  .signupFormContainer {
+    width: 400px;
+    margin: 100px auto 0;
+
+    h1 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      color: black;
+    }
+  }
+}
+
+.ghostClaim {
+  display: block;
+  width: 50%;
+  height: 600px;
+  position: absolute;
+  top: 200px;
+  right: 0;
 }

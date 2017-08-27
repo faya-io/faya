@@ -13,6 +13,16 @@ import './css/pure-min.css'
 import './App.scss'
 
 class App extends Component {
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (document.body.scrollTop > 100) {
+        document.getElementsByClassName('navbar')[0].style.background = 'rgba(0,0,0,0.8)'
+      } else {
+        document.getElementsByClassName('navbar')[0].style.background = ''
+      }
+    });
+  }
+
   render() {
     const UserContainerLoggedIn = VisibleOnlyAuth(() =>
       <UserProfileContainer />
@@ -22,24 +32,29 @@ class App extends Component {
       <LoginButtonContainer />
     )
 
+    let path = this.props.location.pathname.replace(/\//g, '')
+    if (!path) {
+      path = 'home'
+    }
+
     return (
       <div className="App">
-        <nav className="navbar pure-menu pure-menu-horizontal">
+        <nav className={`navbar ${path}`}>
           <div className="logo">
-            <Link to="/" className="pure-menu-heading pure-menu-link">Faya.</Link>
+            <Link to="/" className=" ">Faya.</Link>
           </div>
           <ul className="pure-menu-list navbar-center">
             <li className="pure-menu-item">
-              <Link to="/" className="pure-menu-link">Top Bounty</Link>
+              <Link to="/" className="">Top Bounty</Link>
             </li>
             <li className="pure-menu-item">
-              <Link to="/categories" className="pure-menu-link">Categories</Link>
+              <Link to="/categories" className="">Categories</Link>
             </li>
             <li className="pure-menu-item">
-              <a href="/blog" className="pure-menu-link">Blog</a>
+              <a href="/blog" className="">Blog</a>
             </li>
             <li className="pure-menu-item">
-              <a href="/about" className="pure-menu-link">About Us</a>
+              <a href="/about" className="">About Us</a>
             </li>
           </ul>
           <div className="profile-button navbar-right">
@@ -50,17 +65,7 @@ class App extends Component {
 
         {this.props.children}
 
-        <footer className="">
-          <div className="logoFooter">
-            <Link to="/" className="">Faya.</Link>
-          </div>
-          <div className="copyright">
-            <span>Copyright @2017 faya Inc. All right reserved.</span>
-          </div>
-          <div className="footerRight">
-            Privacy Policy | Term of Use | Legal | Site Map
-          </div>
-        </footer>
+        <img className="fakeImg" src="https://ipfs.io/ipfs/QmcQ65yuNQWzu5D9fUdqu4d8xAfjQoCNqKHQByYY4FdWLd" alt="" />
       </div>
     );
   }

@@ -11,8 +11,8 @@ contract Bounty {
     }
 
     bytes32 ipfsHash;
+    bool isActive;
     uint due;
-    uint reward;
     mapping (address => uint) contributions;
     Claim[] claims;
 
@@ -29,12 +29,12 @@ contract Bounty {
 
     event UpVoteEvent(
         address indexed _voter,
-        uint claimIndex
+        uint _claimIndex
     );
 
     event DownVoteEvent(
         address indexed _voter,
-        uint claimIndex
+        uint _claimIndex
     );
 
     function Bounty(address _initiator, uint _due, bytes32 _ipfsHash) {
@@ -42,6 +42,17 @@ contract Bounty {
 
         due = _due;
         ipfsHash = _ipfsHash;
+        isActive = true;
+    }
+
+    function getBountyDetail() returns (
+        bytes32 _ipfsHash,
+        bool _isActive,
+        uint _due,
+        uint _reward,
+        uint _claimCount)
+    {
+        return (ipfsHash, isActive, due, this.balance, claims.length);
     }
 
     function contribute() payable {
@@ -64,9 +75,9 @@ contract Bounty {
         }
     }
 
-    function getClaimCount() returns (uint) {
-        return claims.length;
-    }
+    // function getClaimCount() returns (uint) {
+    //     return claims.length;
+    // }
 
     function getClaimDetail(uint index) returns (address, bytes32, uint, uint) {
         var c = claims[index];

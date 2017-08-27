@@ -4,21 +4,30 @@ class BountyCollection extends Component {
   constructor(props) {
     super(props)
 
+    
+    
+  }
+
+  componentDidMount() {
+    this.props.fetchBounty()
+  }
+
+  render() {
     const [
       firstBounty,
       secondBounty,
       thirdBounty,
-    ] = props.activeBounty
+    ] = this.props.bounties
 
     this.state = {
       firstBounty,
       secondBounty,
       thirdBounty,
-      thirdTierBounties: props.activeBounty.slice(3, 11),
+      thirdTierBounties: this.props.bounties.slice(3, 11),
     }
-  }
 
-  render() {
+    
+
     return(
       <div className="bountyCollectionContainer">
         <div className="firstBounty">

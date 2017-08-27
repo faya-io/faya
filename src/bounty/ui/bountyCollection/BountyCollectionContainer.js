@@ -4,8 +4,7 @@ import { fetchBounty } from '../../bountyModule'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    activeBounty: state.bounty.activeBounty,
-    pastBounty: state.bounty.pastBounty,
+    bounties: state.bounties,
   }
 }
 

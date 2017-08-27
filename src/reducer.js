@@ -6,7 +6,7 @@ import web3Reducer from './util/web3/web3Reducer'
 
 const reducer = combineReducers({
   routing: routerReducer,
-  bounty: bountyReducer,
+  bounties: bountyReducer,
   user: userReducer,
   web3: web3Reducer,
 })

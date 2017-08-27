@@ -4,27 +4,18 @@ import './Bounty.sol';
 
 contract Faya {
 
-  address[] activeBounty;
-  address[] pastBounty;
+  address[] bounties;
 
-  event Log(bytes32 _msg);
+  // event Log(bytes32 _msg);
 
   function submitBounty(uint due, bytes32 ipfs) {
     address bounty = new Bounty(msg.sender, due, ipfs);
-    activeBounty.push(bounty);
+    bounties.push(bounty);
   }
 
-  function getActiveBounty() returns (address[]) {
-    Log(bytes32(activeBounty.length));
-    return activeBounty;
-  }
-
-  function getPastBounty() returns (address[]) {
-    var result = new address[](20);
-    for (uint i = 0; i < pastBounty.length; i++) {
-      result[i] = pastBounty[i];
-    }
-    return result;
+  function getBounties() returns (address[]) {
+    // Log(bytes32(activeBounty.length));
+    return bounties;
   }
   
 }
